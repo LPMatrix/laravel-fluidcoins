@@ -89,7 +89,7 @@ class Fluidcoins
   public static function getAddresses($coin_id, $page = 1, $per_page = 20) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/address?page={$page}&per_page=${per_page}&coin_id={$coin_id}`, 'GET'
+        `/v1/address?page={$page}&per_page={$per_page}&coin_id={$coin_id}`, 'GET'
       )->getResponse();
       
     } catch (Exception $e) {

@@ -14,19 +14,19 @@ You can install the package via composer:
 composer require lpmatrix/laravel-fluidcoins
 ```
 
-## Usage
-### create a new crypto deposit address
+## Usage/Example
 ```php
 use FluidCoins;
 
-$address = FluidCoins::createNewAddress(['code'=> 'USDT', 'network'=> 'POLYGON']);
+FluidCoins::createNewAddress(['code'=> 'USDT', 'network'=> 'POLYGON']);
 ```
 
-### Testing
+## Testing
 
 ```bash
 composer test
 ```
+
 
 ## Configuration
 
@@ -73,7 +73,3 @@ If you discover any security related issues, please email mubaraqsanusi908@gmail
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
