@@ -44,7 +44,7 @@ A configuration-file named `fluidcoins.php` with some sensible defaults will be 
 return [
 
     /**
-     * Secret Key From Redbiller Dashboard
+     * Secret Key From FLuidcoins Dashboard
      *
      */
     'secretKey' => getenv('FLUIDCOINS_SECRET_KEY');
