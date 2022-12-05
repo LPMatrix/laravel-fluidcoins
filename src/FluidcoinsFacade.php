@@ -1,13 +1,13 @@
 <?php
 
-namespace LPMatrix\LaravelFluidcoins;
+namespace LPMatrix\Fluidcoins;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \LPMatrix\LaravelFluidcoins\Skeleton\SkeletonClass
  */
-class LaravelFluidcoinsFacade extends Facade
+class FluidcoinsFacade extends Facade
 {
     /**
      * Get the registered name of the component.

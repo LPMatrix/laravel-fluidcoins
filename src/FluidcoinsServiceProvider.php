@@ -1,10 +1,10 @@
 <?php
 
-namespace LPMatrix\LaravelFluidcoins;
+namespace LPMatrix\Fluidcoins;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelFluidcoinsServiceProvider extends ServiceProvider
+class FluidcoinsServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

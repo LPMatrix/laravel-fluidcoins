@@ -1,10 +1,10 @@
-# Very short description of the package
+# Laravel Fluidcoins
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lpmatrix/laravel-fluidcoins.svg?style=flat-square)](https://packagist.org/packages/lpmatrix/laravel-fluidcoins)
 [![Total Downloads](https://img.shields.io/packagist/dt/lpmatrix/laravel-fluidcoins.svg?style=flat-square)](https://packagist.org/packages/lpmatrix/laravel-fluidcoins)
 ![GitHub Actions](https://github.com/lpmatrix/laravel-fluidcoins/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+A laravel package to seamlessly integrate into fluidcoins
 
 ## Installation
 
@@ -24,6 +24,32 @@ composer require lpmatrix/laravel-fluidcoins
 
 ```bash
 composer test
+```
+
+## Configuration
+
+You can publish the configuration file using this command:
+
+```bash
+php artisan LPMatrix:publish --provider="LPMatrix\LaravelFluidcoins\LaravelFluidcoinsServiceProvider"
+```
+
+A configuration-file named `fluidcoins.php` with some sensible defaults will be placed in your `config` directory:
+
+```php
+<?php
+
+return [
+
+    /**
+     * Secret Key From Redbiller Dashboard
+     *
+     */
+    'secretKey' => getenv('FLUIDCOINS_SECRET_KEY');
+
+    'paymentUrl' => getenv('FLUIDCOINS_URL');
+
+];
 ```
 
 ### Changelog

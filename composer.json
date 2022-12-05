@@ -3,7 +3,11 @@
     "description": "Laravel Package to seamlessly integrate with Fluidcoins",
     "keywords": [
         "lpmatrix",
-        "laravel-fluidcoins"
+        "laravel-fluidcoins", "FluidCoins",
+        "Crypto",
+        "crypto payments",
+        "stablecoins",
+        "PHP", "Laravel"
     ],
     "homepage": "https://github.com/lpmatrix/laravel-fluidcoins",
     "license": "MIT",
@@ -25,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "LPMatrix\\LaravelFluidcoins\\": "src"
+            "LPMatrix\\Fluidcoins\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "LPMatrix\\LaravelFluidcoins\\Tests\\": "tests"
+            "LPMatrix\\Fluidcoins\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +48,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LPMatrix\\LaravelFluidcoins\\LaravelFluidcoinsServiceProvider"
+                "LPMatrix\\Fluidcoins\\FluidcoinsServiceProvider"
             ],
             "aliases": {
-                "LaravelFluidcoins": "LPMatrix\\LaravelFluidcoins\\LaravelFluidcoinsFacade"
+                "Fluidcoins": "LPMatrix\\Fluidcoins\\FluidcoinsFacade"
             }
         }
     }
