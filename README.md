@@ -19,7 +19,7 @@ composer require lpmatrix/laravel-fluidcoins
 ```php
 use FluidCoins;
 
-$address = FluidCoins::createNewAddress(['code'=> 'USDT', 'network'=> 'POLYGON']);
+FluidCoins::createNewAddress($data);
 ```
 
 ### Testing
@@ -44,7 +44,7 @@ A configuration-file named `fluidcoins.php` with some sensible defaults will be 
 return [
 
     /**
-     * Secret Key From Redbiller Dashboard
+     * Secret Key From Fluidcoins Dashboard
      *
      */
     'secretKey' => getenv('FLUIDCOINS_SECRET_KEY');
