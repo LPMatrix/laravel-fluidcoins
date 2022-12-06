@@ -22,6 +22,9 @@ use FluidCoins;
 FluidCoins::createNewAddress($data);
 ```
 
+### Documentation
+Documentation for the library can be found [here](https://lpmatrix.github.io/laravel-fluidcoins/#/)
+
 ### Testing
 
 ```bash
