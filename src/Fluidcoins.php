@@ -89,7 +89,7 @@ class Fluidcoins
   public static function getAddresses($coin_id, $page = 1, $per_page = 20) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/address?page={$page}&per_page={$per_page}&coin_id={$coin_id}`, 'GET'
+        "/v1/address?page={$page}&per_page={$per_page}&coin_id={$coin_id}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -123,7 +123,7 @@ class Fluidcoins
   public static function getCryptoDeposits($page = 1, $per_page = 20) {
     try {
        return (new self)->setHttpResponse(
-        `/v1/address/transactions?page={$page}&per_page={$per_page}`, 'GET'
+        "/v1/address/transactions?page={$page}&per_page={$per_page}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -139,7 +139,7 @@ class Fluidcoins
   public static function getAddressSingleTransaction($reference) {
     try {
        return (new self)->setHttpResponse(
-        `/v1/address/transactions/{$reference}`, 'GET'
+        "/v1/address/transactions/{$reference}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -154,7 +154,7 @@ class Fluidcoins
    */
   public static function getSingleAddress($reference) {
     try {
-      return (new self)->setHttpResponse(`/v1/address/{$reference}`, 'GET')->getResponse();
+      return (new self)->setHttpResponse("/v1/address/{$reference}", 'GET')->getResponse();
       
     } catch (Exception $e) {
       return $e;
@@ -171,7 +171,7 @@ class Fluidcoins
   public static function getAddressTransactions($reference, $page = 1, $per_page = 20) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/address/${reference}/transactions?page={$page}&per_page={$per_page}`, 'GET'
+        "/v1/address/${reference}/transactions?page={$page}&per_page={$per_page}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -199,7 +199,7 @@ class Fluidcoins
    */
   public static function getBalance($code) {
     try {
-      return (new self)->setHttpResponse(`/v1/balances/{$code}`, 'GET')->getResponse();
+      return (new self)->setHttpResponse("/v1/balances/{$code}", 'GET')->getResponse();
       
     } catch (Exception $e) {
       return $e;
@@ -214,7 +214,7 @@ class Fluidcoins
   public static function getCurrencies($test_net_only = false) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/currencies?test_net_only={$test_net_only}`, 'GET'
+        "/v1/currencies?test_net_only={$test_net_only}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -233,7 +233,7 @@ class Fluidcoins
   public static function getFiatRate($from, $to) {
     $url = "/v1/rates";
     if ($from && $to) {
-      $url = `/v1/rates?from={$from}&to={$to}`;
+      $url = "/v1/rates?from={$from}&to={$to}";
     }
     try {
       return (new self)->setHttpResponse($url, 'GET')->getResponse();
@@ -252,9 +252,9 @@ class Fluidcoins
    */
   public static function getCustomers($blacklisted, $page = 1, $per_page = 10) {
     try {
-      $url = `/v1/customers?page={$page}&per_page={$per_page}`;
+      $url = "/v1/customers?page={$page}&per_page={$per_page}";
       if ($blacklisted) {
-        $url = `/v1/customers?page={$page}&per_page={$per_page}&blacklisted={$blacklisted}`;
+        $url = "/v1/customers?page={$page}&per_page={$per_page}&blacklisted={$blacklisted}";
       }
       return (new self)->setHttpResponse($url, 'GET')->getResponse();
       
@@ -291,7 +291,7 @@ class Fluidcoins
    */
   public static function getCustomer($reference) {
     try {
-      return (new self)->setHttpResponse(`/v1/customers/{$reference}`, 'GET')->getResponse();
+      return (new self)->setHttpResponse("/v1/customers/{$reference}", 'GET')->getResponse();
       
     } catch (Exception $e) {
       return $e;
@@ -314,7 +314,7 @@ class Fluidcoins
   public static function editCustomer($reference, $data) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/customers/{$reference}`, 'PATCH',
+        "/v1/customers/{$reference}", 'PATCH',
         $data
       )->getResponse();
       
@@ -331,7 +331,7 @@ class Fluidcoins
   public static function whiteListCustomer($reference) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/customers/{$reference}/blacklist`, 'DELETE'
+        "/v1/customers/{$reference}/blacklist", 'DELETE'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -347,7 +347,7 @@ class Fluidcoins
   public static function blackListCustomer($reference) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/customers/{$reference}/blacklist`, 'POST'
+        "/v1/customers/{$reference}/blacklist", 'POST'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -362,9 +362,9 @@ class Fluidcoins
    * @returns {Promise<any | undefined>} The response
    */
   public static function getCustomerTransactions($reference, $status) {
-    $url = `/v1/customers/{$reference}/transactions`;
+    $url = "/v1/customers/{$reference}/transactions";
     if ($status) {
-      $url = `/v1/customers/{$reference}/transactions?status={$status}`;
+      $url = "/v1/customers/{$reference}/transactions?status={$status}";
     }
     try {
       return (new self)->setHttpResponse($url, 'GET')->getResponse();
@@ -382,9 +382,9 @@ class Fluidcoins
    * @returns {Promise<any | undefined>} The response
    */
   public static function getPaymentLinks($status, $page = 1, $per_page = 20) {
-    $url = `/v1/links?page={$page}&per_page={$per_page}`;
+    $url = "/v1/links?page={$page}&per_page={$per_page}";
     if (status) {
-      $url = `/v1/links?page={$page}&per_page={$per_page}&status{$status}`;
+      $url = "/v1/links?page={$page}&per_page={$per_page}&status{$status}";
     }
     try {
       return (new self)->setHttpResponse($url, 'GET')->getResponse();
@@ -426,7 +426,7 @@ class Fluidcoins
    */
   public static function getSinglePaymentLink($reference) {
     try {
-      return (new self)->setHttpResponse(`/v1/links/{$reference}`, 'GET')->getResponse();
+      return (new self)->setHttpResponse("/v1/links/{$reference}", 'GET')->getResponse();
       
     } catch (Exception $e) {
       return $e;
@@ -450,7 +450,7 @@ class Fluidcoins
    */
   public static function editPaymentLink($reference, $data) {
     try {
-      return (new self)->setHttpResponse(`/v1/links/{$reference}`, 'PATCH', $data)->getResponse();
+      return (new self)->setHttpResponse("/v1/links/{$reference}", 'PATCH', $data)->getResponse();
       
     } catch (Exception $e) {
       return $e;
@@ -465,7 +465,7 @@ class Fluidcoins
   public static function disablePaymentLink($reference) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/links/{$reference}/enable`, 'DELETE'
+        "/v1/links/{$reference}/enable", 'DELETE'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -480,7 +480,7 @@ class Fluidcoins
    */
   public static function enablePaymentLink($reference) {
     try {
-      return (new self)->setHttpResponse(`/v1/links/{$reference}/enable`, 'POST')->getResponse();
+      return (new self)->setHttpResponse("/v1/links/{$reference}/enable", 'POST')->getResponse();
       
     } catch (Exception $e) {
       return $e;
@@ -495,7 +495,7 @@ class Fluidcoins
   public static function getPaymentLinkTransactions($reference) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/links/{$reference}/transactions`, 'GET'
+        "/v1/links/{$reference}/transactions", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -525,7 +525,7 @@ class Fluidcoins
   public static function getPayouts($page = 1, $per_page = 20) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/payouts?page={$page}&per_page={$per_page}`, 'GET'
+        "/v1/payouts?page={$page}&per_page={$per_page}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -563,7 +563,7 @@ class Fluidcoins
   public static function getPayoutAccounts($page = 1, $per_page = 20) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/payouts/accounts?page={$page}&per_page={$per_page}`, 'GET'
+        "/v1/payouts/accounts?page={$page}&per_page={$per_page}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -601,7 +601,7 @@ class Fluidcoins
   public static function getBanks($country = "NG") {
     try {
       return (new self)->setHttpResponse(
-        `/v1/payouts/accounts/banks?country={$country}`, 'GET'
+        "/v1/payouts/accounts/banks?country={$country}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -618,7 +618,7 @@ class Fluidcoins
   public static function resolveBankAccount($bank_code, $account) {
     try {
       return (new self)->setHttpResponse(
-        `/v1/payouts/accounts/banks/resolve?bank_code={$bank_code}&account={$account}`, 'GET'
+        "/v1/payouts/accounts/banks/resolve?bank_code={$bank_code}&account={$account}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -633,7 +633,7 @@ class Fluidcoins
    */
   public static function cancelPayout($reference) {
     try {
-      return (new self)->setHttpResponse(`/v1/payouts/{$reference}`, 'DELETE')->getResponse();
+      return (new self)->setHttpResponse("/v1/payouts/{$reference}", 'DELETE')->getResponse();
       
     } catch (Exception $e) {
       return $e;
@@ -647,7 +647,7 @@ class Fluidcoins
    */
   public static function getPayoutDetails($reference) {
     try {
-      return (new self)->setHttpResponse(`/v1/payouts/{$reference}`, 'GET')->getResponse();
+      return (new self)->setHttpResponse("/v1/payouts/{$reference}", 'GET')->getResponse();
       
     } catch (Exception $e) {
       return $e;
@@ -662,7 +662,7 @@ class Fluidcoins
    */
   public static function getSwapHistory($page = 1, $per_page = 10) {
     try {
-      return (new self)->setHttpResponse(`/v1/swaps?page={$page}&per_page={$per_page}`, 'GET'
+      return (new self)->setHttpResponse("/v1/swaps?page={$page}&per_page={$per_page}", 'GET'
       )->getResponse();
       
     } catch (Exception $e) {
@@ -700,9 +700,9 @@ class Fluidcoins
    */
   public static function getAllTransactions($status, $page = 1, $per_page = 10) {
     try {
-      $url = `/v1/transactions?page={$page}&per_page={$per_page}`;
+      $url = "/v1/transactions?page={$page}&per_page={$per_page}";
       if (status) {
-        $url = `/v1/transactions?page={$status}&per_page={$per_page}&status{$status}`;
+        $url = "/v1/transactions?page={$status}&per_page={$per_page}&status{$status}";
       }
       return (new self)->setHttpResponse($url, 'GET')->getResponse();
       
@@ -718,7 +718,7 @@ class Fluidcoins
    */
   public static function getSingleTransaction($reference) {
     try {
-      return (new self)->setHttpResponse(`/v1/transactions/{$reference}`, 'GET')->getResponse();
+      return (new self)->setHttpResponse("/v1/transactions/{$reference}", 'GET')->getResponse();
       
     } catch (Exception $e) {
       return $e;
