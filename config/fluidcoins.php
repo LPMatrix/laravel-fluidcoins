@@ -22,4 +22,10 @@ return [
      *
      */
     'secretKey' => getenv('FLUIDCOINS_SECRET_KEY'),
+
+    /**
+     * Fluidcoins URL
+     *
+     */
+    'baseUrl' => getenv('FLUIDCOINS_URL'),
 ];

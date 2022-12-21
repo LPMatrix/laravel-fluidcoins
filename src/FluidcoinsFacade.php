@@ -1,6 +1,6 @@
 <?php
 
-namespace LPMatrix\Fluidcoins;
+namespace LPMatrix\FluidCoins;
 
 use Illuminate\Support\Facades\Facade;
 

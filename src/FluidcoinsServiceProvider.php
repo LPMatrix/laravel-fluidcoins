@@ -1,6 +1,6 @@
 <?php
 
-namespace LPMatrix\Fluidcoins;
+namespace LPMatrix\FluidCoins;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -21,7 +21,7 @@ class FluidcoinsServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('laravel-fluidcoins.php'),
+                __DIR__.'/../config/config.php' => config_path('fluidcoins.php'),
             ], 'config');
 
             // Publishing the views.
@@ -50,11 +50,11 @@ class FluidcoinsServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-fluidcoins');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'fluidcoins');
 
         // Register the main class to use with the facade
         $this->app->singleton('laravel-fluidcoins', function () {
-            return new LaravelFluidcoins;
+            return new FluidCoins;
         });
     }
 }

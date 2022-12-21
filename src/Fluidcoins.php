@@ -1,11 +1,11 @@
 <?php
 
-namespace LPMatrix\Fluidcoins;
+namespace LPMatrix\FluidCoins;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Config;
 
-class Fluidcoins
+class FluidCoins
 {
   protected $secretkey;
   protected $request;
