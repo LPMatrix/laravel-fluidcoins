@@ -36,7 +36,7 @@ composer test
 You can publish the configuration file using this command:
 
 ```bash
-php artisan LPMatrix:publish --provider="LPMatrix\Fluidcoins\FluidcoinsServiceProvider"
+php artisan LPMatrix:publish --provider="LPMatrix\FluidCoins\FluidcoinsServiceProvider"
 ```
 
 A configuration-file named `fluidcoins.php` with some sensible defaults will be placed in your `config` directory:
